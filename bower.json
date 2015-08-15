@@ -1,0 +1,25 @@
+{
+  "name": "uproperty",
+  "version": "0.1",
+  "homepage": "https://github.com/r0lodex/uproperty",
+  "authors": [
+    "Irfan Radzi<rolodex888@gmail.com>"
+  ],
+  "description": "An iProperty clone with a twist.",
+  "main": "index.html",
+  "keywords": [
+    "uproperty"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "angular": "~1.4.4"
+  }
+}

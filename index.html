@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="uprop">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>uProperty</title>
+
+	<link rel="stylesheet" type="text/css" href="static/css/uprop.css">
+	<script src="static/js/min/app-min.js"></script>
+	<!--
+	# FOR NON-CODEKIT. Run `bower install` to install dependencies.
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="static/js/_uibootstrap.js"></script>
+	<script src="static/js/app.js"></script>
+	-->
+</head>
+<body ng-controller="root">
+
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">uproperty</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navigation">
+			<ul class="nav navbar-nav">
+				<li ng-repeat="link in links"><a href="#" ng-bind="link"></a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<section class="page-hero">
+	<div class="container">
+		<div id="page-hero-search">
+			<h1>Find Malaysia Property &amp; Real Estate</h1>
+			<tabset>
+				<tab heading="For Sale">
+					<form name="for_sale_search" class="hero-search-form">
+						<div class="row">
+							<div class="col-md-10">
+								<table>
+									<tr>
+										<td colspan="3"><input class="form-control" placeholder="Enter property name, location or developer's name"></td>
+										<td><input class="form-control" placeholder="Min Price"></td>
+										<td><input class="form-control" placeholder="Max Price"></td>
+									</tr>
+									<tr>
+										<td><select class="form-control"><option selected disablde>All States</option></select></td>
+										<td><select class="form-control"><option selected disablde>All District</option></select></td>
+										<td><select class="form-control"><option selected disablde>All Residential</option></select></td>
+										<td><input class="form-control" placeholder="Min sq. ft."></td>
+										<td><input class="form-control" placeholder="Max sq. ft."></td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-md-2">
+								<a class="fill-div btn btn-primary btn-block">Search</a>
+							</div>
+						</div>
+					</form>
+				</tab>
+				<tab heading="For Rent">s</tab>
+				<tab heading="For Auction">s</tab>
+			</tabset>
+		</div>
+	</div>
+</section>
+<section class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="section-container">
+					<h3>Properties of The Month</h3>
+					<div class="row">
+						<div class="col-md-6" ng-repeat="prop in properties | limitTo: 2">
+							<div class="prop-card">
+								<img ng-src="static/img/properties/{{$index}}.png">
+								<h4 ng-bind="prop.title"></h4>
+								<small ng-bind="prop.location"></small>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div class="section-container">
+					<h3>Featured Properties</h3>
+					<tabset>
+						<tab heading="New Properties">
+							<div class="row">
+								<div class="col-md-4" ng-repeat="prop in properties | limitTo:3">
+									<div class="prop-card">
+										<img ng-src="static/img/properties/{{$index}}.png">
+										<h4 ng-bind="prop.title"></h4>
+										<small ng-bind="prop.type"></small>
+										<small ng-bind="prop.location"></small>
+									</div>
+								</div>
+							</div>
+						</tab>
+						<tab heading="For Sale">
+							<div class="row">
+								<div class="col-md-4" ng-repeat="prop in properties | limitTo:3">
+									<div class="prop-card">
+										<img ng-src="static/img/properties/{{$index}}.png">
+										<h4 ng-bind="prop.title"></h4>
+										<small ng-bind="prop.type"></small>
+										<small ng-bind="prop.location"></small>
+									</div>
+								</div>
+							</div>
+						</tab>
+					</tabset>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="ad-container">
+					<img src="static/img/ad2.png">
+					<img src="static/img/ad3.png">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<small>
+			Hong Kong Property – GoHome.com.hk, Squarefoot.com.hk  |  Thailand Property  |  Singapore Property  |  Malaysia Property  |  Philippines Property
+			Commercial Property  |  Asia Property Events  |  Corporate Newsroom  |  Thinkproperty  |  Rumah Dijual di Indonesia  |  Properti Dijual  |  Macau Property
+			Luxury Homes  |  Office18  |  MalaysiaRealEstate.com.my  |  SG-House - Property Forum  |  ThinkProperty Singapore  |  realestate.com.au  |  Casa.it  |  Myfun.com
+			Athome.lu  |  Germany  |  France
+		</small>
+	</div>
+</footer>
+
+</body>
+</html>
